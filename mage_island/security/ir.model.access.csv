@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mage_island_object,mage_island.object,model_mage_island_object,base.group_user,1,1,1,1
+access_mage_island_player,mage_island.player,model_mage_island_player,base.group_user,1,1,1,1
+access_mage_island_island,mage_island.island,model_mage_island_island,base.group_user,1,1,1,1
+access_mage_island_mage,mage_island.mage,model_mage_island_mage,base.group_user,1,1,1,1

@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- Definición de vistas explícitas -->
+    <record model="ir.ui.view" id="mage_island.object_list">
+      <field name="name">MageIsland Object List</field>
+      <field name="model">mage_island.object</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>  <!-- Cambiado a 'name' -->
+          <field name="quantity"/>  <!-- Cambiado a 'quantity' -->
+        </tree>
+      </field>
+    </record>
+
+    <!-- Definición de acciones para abrir vistas -->
+    <record model="ir.actions.act_window" id="mage_island.action_object_window">
+      <field name="name">Object List</field>
+      <field name="res_model">mage_island.object</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="mage_island.action_player_window">
+      <field name="name">Player List</field>
+      <field name="res_model">mage_island.player</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="mage_island.action_mage_window">
+      <field name="name">Mage List</field>
+      <field name="res_model">mage_island.mage</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="mage_island.action_island_window">
+      <field name="name">Island List</field>
+      <field name="res_model">mage_island.island</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menú principal -->
+    <menuitem name="MageIsland" id="mage_island.menu_root"/>
+
+    <!-- Categorías del menú -->
+    <menuitem name="Island Management" id="mage_island.menu_1" parent="mage_island.menu_root"/>
+    <menuitem name="Client" id="mage_island.menu_2" parent="mage_island.menu_root"/>
+
+    <!-- Elementos del menú con sus acciones -->
+    <menuitem name="Object" id="mage_island.menu_obj_list" parent="mage_island.menu_1"
+              action="mage_island.action_object_window"/>
+
+    <menuitem name="Mage" id="mage_island.menu_mage_list" parent="mage_island.menu_1"
+              action="mage_island.action_mage_window"/>
+
+    <menuitem name="Island" id="mage_island.menu_island_list" parent="mage_island.menu_1"
+              action="mage_island.action_island_window"/>
+
+    <menuitem name="Player" id="mage_island.menu_player_list" parent="mage_island.menu_2"
+              action="mage_island.action_player_window"/>
+  </data>
+</odoo>
